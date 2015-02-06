@@ -5,10 +5,9 @@ import sys
 
 
 def findlines (strsearch, filename):
-	inputfile = open(filename, 'r')	
-	inputfilenum = list(enumerate(inputfile, 1))
+	inputfile = open(filename, 'r')
 	
-	for idx, val in inputfilenum:
+	for idx, val in enumerate(inputfile, 1):
 		if strsearch in val:
 			print(str(idx) + ": " + val.strip())
 
