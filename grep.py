@@ -11,7 +11,7 @@ def findlines (strsearch, filename):
 		
 	for line in inputfile:
 		if strsearch in line:
-			output.append(line)
+			output.append(line.strip())
 		
 	if len(output) < 1:
 		failsearch = "No lines contain that string"
