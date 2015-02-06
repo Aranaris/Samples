@@ -6,16 +6,12 @@ import sys
 
 def findlines (strsearch, filename):
 	inputfile = open(filename, 'r')	
-	linenum = 0	
+	inputfilenum = list(enumerate(inputfile, 1))
 	
-	for line in inputfile:
-		linenum += 1
-		if strsearch in line:
-			print(str(linenum) + ": " + line)
-		
+	for idx, val in inputfilenum:
+		if strsearch in val:
+			print(str(idx) + ": " + val.strip())
 
-		
-		
 
 #search_file = input("Enter File to Search: ")
 #search_string = input("Enter String to Search For: ")
