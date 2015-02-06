@@ -5,24 +5,21 @@ import sys
 
 
 def findlines (strsearch, filename):
-	inputfile = open(filename, 'r')
-	output = []
-		
-		
+	inputfile = open(filename, 'r')	
+	linenum = 0	
+	
 	for line in inputfile:
+		linenum += 1
 		if strsearch in line:
-			output.append(line.strip())
+			print(str(linenum) + ": " + line)
 		
-	if len(output) < 1:
-		failsearch = "No lines contain that string"
-		return failsearch
-		
-	return output
+
 		
 		
 
 #search_file = input("Enter File to Search: ")
 #search_string = input("Enter String to Search For: ")
-print(findlines(sys.argv[1], sys.argv[2]))
+findlines(sys.argv[1], sys.argv[2])
+
 #print(findlines(str(search_file), str(search_string)))
 #print(search_file)
